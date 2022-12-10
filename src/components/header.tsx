@@ -1,26 +1,24 @@
 import * as React from "react";
 import Cta from "../components/cta";
+import LanguageDropdown from "../components/LanguageDropdown";
+import { useTranslation } from "react-i18next";
 
 type Link = {
   label: string;
   url: string;
 };
 
-const links: Link[] = [
-  {
-    label: "Home",
-    url: "/",
-  },
-  {
-    label: "About",
-    url: "/turtlehead-tacos",
-  },
-];
+type HeaderProps = {
+  _site: any;
+};
 
-const Header = () => {
-  const linkDoms = links.map((link) => (
+const Header = ({ _site }: HeaderProps) => {
+  const { t, i18n } = useTranslation();
+  // console.log('i18n', i18n);
+  // const links = _site.c_header;
+  const linkDoms = _site.c_header.map((link:any) => (
     <div key={link.label}>
-      <a href={link.url} target="_blank" rel="noreferrer">
+      <a href={link.uRL} target="_blank" rel="noreferrer">
         {link.label}
       </a>
     </div>
@@ -44,11 +42,14 @@ const Header = () => {
           <div className="flex gap-x-4">
             <div className=" h-12 pt-4 ">
               <Cta
-                buttonText="Order Online"
+                buttonText={t("order_online")}
                 url="#"
                 style="text-white bg-orange shadow-xl"
               ></Cta>
             </div>
+            {/* <div className=" h-12 pt-4 ">
+              <LanguageDropdown />
+            </div> */}
           </div>
         </nav>
       </div>

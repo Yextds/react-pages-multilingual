@@ -1,4 +1,6 @@
+import { t } from "i18next";
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 type Hours = {
   title?: string;
@@ -97,11 +99,11 @@ function convertTo12HourFormat(time: string, includeMeridiem: boolean): string {
   const timeParts = time.split(":");
   let hour = Number(timeParts[0]);
   const minutesString = timeParts[1];
-  const meridiem = hour < 12 || hour === 24 ? "AM" : "PM"; // Set AM/PM
+  const meridiem = hour < 12 || hour === 24 ? t("am") : t("pm"); // Set AM/PM
   hour = hour % 12 || 12; // Adjust hours
 
   return (
-    hour.toString() + ":" + minutesString + (includeMeridiem ? meridiem : "")
+    hour.toString() + ":" + minutesString + (includeMeridiem ? " "+meridiem : "")
   );
 }
 
@@ -113,11 +115,10 @@ type DayRow = {
 
 const DayRow = (props: DayRow) => {
   const { dayName, day, isToday } = props;
-
   return (
     <tr className={isToday ? "bg-gray-200 font-bold" : ""}>
       <td className="capitalize text-left pl-1 pr-4">
-        <span>{dayName}</span>
+        <span>{t(dayName)}</span>
       </td>
       {!day.isClosed && (
         <td className="pr-1">
@@ -129,7 +130,7 @@ const DayRow = (props: DayRow) => {
       )}
       {day.isClosed && (
         <td className="pr-1">
-          <span>Closed</span>
+          <span>{t("closed")}</span>
         </td>
       )}
     </tr>
@@ -138,15 +139,14 @@ const DayRow = (props: DayRow) => {
 
 const Hours = (props: Hours) => {
   const { title, hours } = props;
-
-  return (
+ return (
     <>
       <div className="text-xl font-semibold mb-4">{title}</div>
       <table>
         <thead className="sr-only">
           <tr>
-            <th>Day of the Week</th>
-            <th>Hours</th>
+            <th>{t("day_of_the_week")}</th>
+            <th>{t("hours")}</th>
           </tr>
         </thead>
         {renderHours(hours)}

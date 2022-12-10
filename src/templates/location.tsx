@@ -27,13 +27,17 @@ import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
+import { useTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
+import "../i18n";
+import useUpdateTranslation from "../hooks/useUpdateTranslation";
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "my-stream-id-1",
+    $id: "locations",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
@@ -55,7 +59,7 @@ export const config: TemplateConfig = {
     },
     // The entity language profiles that documents will be generated for.
     localization: {
-      locales: ["en"],
+      locales: ["en","fr"],
       primary: false,
     },
   },
@@ -68,11 +72,10 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
-    ? document.slug
+  return document.slug ? document.meta.locale+"/"+document.slug+".html"
     : `${document.locale}/${document.address.region}/${document.address.city}/${
         document.address.line1
-      }-${document.id.toString()}`;
+      }-${document.id.toString()}.html`;
 };
 
 /**
@@ -144,21 +147,26 @@ const Location: Template<TemplateRenderProps> = ({
     geocodedCoordinate,
     services,
     description,
+    meta,
   } = document;
-
+  
+  const { t, i18n } = useTranslation();
+  i18n.changeLanguage(meta.locale);
+  useUpdateTranslation(_site, meta.locale);
+  // console.log('i18n', meta.locale, i18n);
   return (
     <>
       <PageLayout _site={_site}>
         <Banner name={name} address={address} />
         <div className="centered-container">
           <div className="section">
-            <div className="grid grid-cols-2 gap-x-10 gap-y-10">
+            <div className="grid grid-cols-2 gap-x-10 gap-y-10">              
               <div className="bg-gray-100 p-2">
                 <Details address={address} phone={mainPhone}></Details>
                 {services && <List list={services}></List>}
               </div>
               <div className="bg-gray-100 p-2">
-                {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+                {hours && <Hours title={t("restaurant_hours")} hours={hours} />}
               </div>
               {geocodedCoordinate && (
                 <StaticMap
@@ -178,4 +186,4 @@ const Location: Template<TemplateRenderProps> = ({
   );
 };
 
-export default Location;
+export default withTranslation()(Location);

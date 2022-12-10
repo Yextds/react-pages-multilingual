@@ -1,0 +1,35 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["siteGlobalData"] 
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "id",
+    "uid",
+    "meta",
+    "name",
+    "c_header",
+    "c_footer",
+    "c_aM",
+    "c_pM",
+    "c_dayOfTheWeek",
+    "c_sunday",
+    "c_monday",
+    "c_tuesday",
+    "c_wednesday",
+    "c_thursday",
+    "c_friday",
+    "c_saturday",
+    "c_orderDelivery",
+    "c_orderPickup",
+    "c_order_online",
+    "c_restaurantHours",
+    "c_servicesLabel",
+    "c_store_details"
+  ],
+  "localization": {
+    "locales": ["en","fr"],
+    "primary": false
+  }
+}
