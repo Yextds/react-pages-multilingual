@@ -6,6 +6,7 @@ export interface WritebackPayload {
   url: string;
   entityId: string;
   locale: string;
+  address: any;
 }
 
 export async function handleUrlWriteback(data: WritebackPayload) {
