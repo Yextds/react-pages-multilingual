@@ -26,7 +26,8 @@
     "c_order_online",
     "c_restaurantHours",
     "c_servicesLabel",
-    "c_store_details"
+    "c_store_details",
+    "c_demoWelcome"
   ],
   "localization": {
     "locales": ["en","fr"],

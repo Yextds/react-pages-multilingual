@@ -8,6 +8,7 @@ const resources = {
   en: {
     translation: {
       "welcome_to_react": "Welcome to React and react-i18next",
+      "demo_welcome": "Hello Welcome",
       "home": "Home",
       "about":"About",
       "order_online":"Order Online",
@@ -32,9 +33,10 @@ const resources = {
   fr: {
     translation: {
       "welcome_to_react": "Bienvenue à React et react-i18next",
+      "demo_welcome": "Bonjour bienvenue",
       "home": "Domicile",
       "about":"À propos de",
-      "order_online":"Commander en ligne",
+      "order_online":"1 Commander en ligne",
       "store_details":"Détails du magasin",
       "restaurant_hours":"Heures d'ouverture",
       "order_pickup":"Cueillette de commande",

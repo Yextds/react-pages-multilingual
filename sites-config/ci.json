@@ -22,6 +22,17 @@
         ],
         "event": "ON_PAGE_GENERATE",
         "functionName": "Generate"
+      },
+      {
+        "pluginName": "onUrlChangePlugin",
+        "sourceFiles": [
+          {
+            "root": "sites-plugins/onUrlChangePlugin",
+            "pattern": "*{.ts,.json}"
+          }
+        ],
+        "event": "ON_URL_CHANGE",
+        "functionName": "onUrlChange"
       }
     ]
   },

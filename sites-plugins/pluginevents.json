@@ -1,0 +1,7 @@
+[
+  {
+    "pluginId": "onUrlChangePlugin",
+    "functionName": "onUrlChange",
+    "event": "ON_URL_CHANGE"
+  }
+]

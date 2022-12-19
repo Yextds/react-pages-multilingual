@@ -153,7 +153,7 @@ const Location: Template<TemplateRenderProps> = ({
   const { t, i18n } = useTranslation();
   i18n.changeLanguage(meta.locale);
   useUpdateTranslation(_site, meta.locale);
-  // console.log('i18n', meta.locale, i18n);
+  // console.log('i18n', i18n);
   return (
     <>
       <PageLayout _site={_site}>

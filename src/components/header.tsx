@@ -47,6 +47,9 @@ const Header = ({ _site }: HeaderProps) => {
                 style="text-white bg-orange shadow-xl"
               ></Cta>
             </div>
+            {/* <div>
+              {t('demo_welcome')}
+            </div> */}
             {/* <div className=" h-12 pt-4 ">
               <LanguageDropdown />
             </div> */}

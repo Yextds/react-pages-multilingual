@@ -14,13 +14,14 @@ const useUpdateTranslation = (data:any, locale:any) => {
   i18n.addResource(locale, 'translation', 'wednesday', data.c_wednesday);
   i18n.addResource(locale, 'translation', 'thursday', data.c_thursday);
   i18n.addResource(locale, 'translation', 'friday', data.c_friday);
-  i18n.addResource(locale, 'translation', 'saturday', data.saturday);
+  // i18n.addResource(locale, 'translation', 'saturday', data.saturday);
   i18n.addResource(locale, 'translation', 'order_delivery', data.c_orderDelivery);
   i18n.addResource(locale, 'translation', 'order_pickup', data.c_orderPickup);
   i18n.addResource(locale, 'translation', 'order_online', data.c_order_online);
   i18n.addResource(locale, 'translation', 'restaurant_hours', data.c_restaurantHours);
   i18n.addResource(locale, 'translation', 'services', data.c_servicesLabel);
   i18n.addResource(locale, 'translation', 'restaurant_hours', data.c_restaurantHours);
+  i18n.addResource(locale, 'translation', 'demo_welcome', data.c_demoWelcome);
 };
 
 export default useUpdateTranslation;
