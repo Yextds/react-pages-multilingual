@@ -52,6 +52,7 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "geomodifier",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {

@@ -19,7 +19,8 @@ export async function handleUrlWriteback(data: WritebackPayload) {
 
 async function writebackUrl(data: WritebackPayload) {
   const updateField = {"meta": {"language": data.locale}}
-  updateField[FIELD_KEY] = data.url
-  let result = await updateEntity(data.entityId, updateField)
+  updateField[FIELD_KEY] = data.url;
+  console.log('updateEntity data', data);
+  let result = await updateEntity(data.entityId, updateField);
   return result
 }
