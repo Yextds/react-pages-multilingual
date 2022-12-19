@@ -1,6 +1,6 @@
 import { updateEntity } from "./yext.ts";
 
-declare var FIELD_KEY: string;
+var FIELD_KEY = "geomodifier";
 
 export interface WritebackPayload {
   url: string;
