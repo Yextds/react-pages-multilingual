@@ -33,6 +33,17 @@
         ],
         "event": "ON_URL_CHANGE",
         "functionName": "onUrlChange"
+      },
+      {
+        "pluginName": "apiPlugin",
+        "sourceFiles": [
+          {
+            "root": "sites-plugins/apiPlugin",
+            "pattern": "*{.ts,.json}"
+          }
+        ],
+        "event": "API",
+        "functionName": "apiPlugin"
       }
     ]
   },
