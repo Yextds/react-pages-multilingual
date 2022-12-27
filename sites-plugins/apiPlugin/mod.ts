@@ -20,12 +20,6 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
   return result.toString();
 }
 
-export function apiPlugin(data: any) {
-  
-  let customData =  {
-    "requestUrl": "https://testsite.dotsquares.com.pagescdn.com/location4-best-buy-union-square.html"
-  };
-
-  return customData;
-  
+export function apiPlugin(data: apiPayload) {
+    return data;  
 }
