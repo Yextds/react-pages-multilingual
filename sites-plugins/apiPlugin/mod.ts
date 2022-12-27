@@ -21,5 +21,5 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
 }
 
 export function apiPlugin(data: apiPayload) {
-    return data;  
+    return data;   
 }
