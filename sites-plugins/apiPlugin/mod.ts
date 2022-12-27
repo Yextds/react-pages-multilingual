@@ -3,7 +3,7 @@ export interface apiPayload {
   urlArgs: string;
   userAgent: string;
   requestUrl: string;
-  headers: any;
+  headers: string;
 }
 
 const YEXT_API_KEY = "46061e82e51fa0626dbee0492d929fe1"; 
