@@ -24,6 +24,6 @@ export function apiPlugin(data: any) {
   
   console.log('Entity Data...', data);
 
-  return JSON.stringify(data);
+  return data;
   
 }
