@@ -22,8 +22,10 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
 
 export function apiPlugin(data: any) {
   
-  console.log('Entity Data...', data);
+  let customData =  {
+    "requestUrl": "/en/location9.html"
+  };
 
-  return data;
+  return customData;
   
 }
