@@ -23,7 +23,7 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
 export function apiPlugin(data: any) {
   
   let customData =  {
-    "requestUrl": "/en/location9.html"
+    "requestUrl": "https://testsite.dotsquares.com.pagescdn.com/location4-best-buy-union-square.html"
   };
 
   return customData;
