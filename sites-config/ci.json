@@ -12,12 +12,16 @@
         "pluginName": "Generator",
         "sourceFiles": [
           {
-            "root": "dist/plugin",
+            "root": "sites-plugins/Generator",
             "pattern": "*{.ts,.json}"
           },
           {
             "root": "dist",
             "pattern": "assets/{server,static,renderer}/**/*{.js,.css}"
+          },
+          {
+            "root": "dist",
+            "pattern": "plugin/*{.json}"
           }
         ],
         "event": "ON_PAGE_GENERATE",
