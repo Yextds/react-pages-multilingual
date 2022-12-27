@@ -22,6 +22,7 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
 
 export function apiPlugin(data: apiPayload) {
   
-  console.log('Entity data', data);
+  console.log('Entity Data...', data);
+  return data;
   
 }
