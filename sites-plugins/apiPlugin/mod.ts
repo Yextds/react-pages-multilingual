@@ -20,10 +20,10 @@ function buildApiUrl(path: string, params?: Record<string, string>) {
   return result.toString();
 }
 
-export function apiPlugin(data: apiPayload) {
+export function apiPlugin(data: any) {
   
   console.log('Entity Data...', data);
-  
-  return;
+
+  return JSON.stringify(data);
   
 }
